@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_last_name = $_POST['new_last_name'];
     $new_password = $_POST['new_password'];
     $confirm_new_password = $_POST['confirm_new_password'];
+    $action = "Zmiana danych użytkownika.";
 
     // Sprawdź, czy nowe hasło i potwierdzenie nowego hasła są identyczne
     if ($new_password !== $confirm_new_password) {
@@ -23,6 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($updateUserDataResult && $updateUserPasswordResult) {
         setSessionData('success_message', 'Dane użytkownika zostały zaktualizowane!');
+
+        addLog($user_id, $action, $conn);
+
         header("Location: users.php");
         exit();
     } else {

@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $species = $_POST['species'];
     $birthdate = $_POST['birthdate'];
     $description = $_POST['description'];
+    $action = "Dodanie nowego zwierzęcia.";
 
     if (empty($name) || empty($species) || empty($birthdate)) {
         $error_message = "Wypełnij wszystkie wymagane pola!";
@@ -27,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $success_message = "Zwierzę zostało dodane pomyślnie!";
 
             setSessionData('success_message', $success_message);
+
+            addLog($user_id, $action, $conn);
 
             header("Location: index.php");
             exit();
@@ -58,7 +61,7 @@ include '../includes/header.php';
             <input type="date" id="birthdate" name="birthdate" required>
 
             <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="4"></textarea>
+            <textarea id="description" class="description-area" name="description" rows="4"></textarea>
 
             <button type="submit">Add Animal</button>
         </form>

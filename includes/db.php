@@ -111,6 +111,29 @@ function addAnimal($name, $species, $birthdate, $user_id, $description, $conn) {
     return $conn->query($query);
 }
 
+// Funkcja do aktualizacji danych zwierzęcia w bazie danych
+function updateAnimal($animal_id, $name, $species, $birthdate, $description, $conn) {
+    $name = $conn->real_escape_string($name);
+    $species = $conn->real_escape_string($species);
+    $birthdate = $conn->real_escape_string($birthdate);
+    $description = $conn->real_escape_string($description);
+
+    $query = "UPDATE animals SET name = '$name', species = '$species', birthdate = '$birthdate', description = '$description' WHERE animal_id = $animal_id";
+
+    return $conn->query($query);
+}
+
+// Dodaj tę funkcję do pliku db.php
+function addLog($user_id, $action, $conn) {
+    $query = "INSERT INTO logs (user_id, action, timestamp) VALUES (?, ?, NOW())";
+
+    $stmt = $conn->prepare($query);
+
+    $stmt->bind_param("is", $user_id, $action);
+
+    return $stmt->execute();
+}
+
 // Pobierz dane o zwierzęciu
 function getAnimalDataById($animal_id, $conn) {
     $query = "SELECT * FROM animals WHERE animal_id = $animal_id";

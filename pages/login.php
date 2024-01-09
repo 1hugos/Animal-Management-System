@@ -11,6 +11,7 @@ if (isLoggedIn()) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $action = "Logowanie";
 
     if (empty($username) || empty($password)) {
         $error_message = "Wypełnij wszystkie pola!";
@@ -19,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
             loginUser($user['user_id'], $user['username']);
+            addLog($user['user_id'], $action, $conn);
             header("Location: index.php");
             exit();
         } else {

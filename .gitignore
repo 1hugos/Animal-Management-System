@@ -1,6 +1,9 @@
 # Ignoruj pliki wygenerowane przez PHPStorm
 .idea/
 
+# Ignoruj backupy baz danych utworzone za pomocą skryptu
+sql/backup_*.sql
+
 # Ignoruj katalogi i pliki generowane przez Composer
 /vendor/
 composer.lock

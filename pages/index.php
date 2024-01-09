@@ -5,7 +5,7 @@ include_once '../includes/db.php';
 
 if (!isLoggedIn()) {
     destroySession();
-    header("Location: login.php");
+    header("Location: home.php");
     exit();
 }
 
@@ -78,21 +78,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             echo '<td>' . $animal['name'] . '</td>';
             echo '<td>' . $animal['species'] . '</td>';
             echo '<td>' . $animal['birthdate'] . '</td>';
-            echo '<td>' . $animal['description'] . '</td>';
+            echo '<td class="description-form">' . $animal['description'] . '</td>';
             echo '<td class="action-cell">';
+            echo '<form class="action-form" method="post" action="../pdf/pdf_generator.php">';
+            echo '<input type="hidden" name="action" value="generate_animal_info_pdf">';
+            echo '<input type="hidden" name="animal_id" value="' . $animal['animal_id'] . '">';
+            echo '<button type="submit" class="pdf-button">PDF</button>';
+            echo '</form>';
+            echo '<a href="edit_animal.php?animal_id=' . $animal['animal_id'] . '" class="edit-button">Edit</a>';
             echo '<form class="action-form" method="post" action="index.php">';
             echo '<input type="hidden" name="action" value="delete_animal">';
             echo '<input type="hidden" name="animal_id" value="' . $animal['animal_id'] .'">';
             echo '<button type="submit" class="delete-button">Delete</button>';
             echo '</form>';
-            if ($role === "2") {
-                echo '<form class="action-form" method="post" action="../pdf/pdf_generator.php">';
-                echo '<input type="hidden" name="action" value="generate_animal_info_pdf">';
-                echo '<input type="hidden" name="animal_id" value="' . $animal['animal_id'] . '">';
-                echo '<button type="submit" class="pdf-button">PDF</button>';
-                echo '</form>';
-                echo '</td>';
-            }           
+            echo '</td>';          
             echo '</tr>';
         }     
         echo '</table>';

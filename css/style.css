@@ -115,7 +115,7 @@ button:hover {
 }
 
 .animals-container {
-	width: 800px;
+	width: 1000px;
 }
 
 .header-container {
@@ -173,8 +173,76 @@ button:hover {
 	align-items: center;
 }
 
+.description-form {
+	width: 300px;
+}
+
+.description-area {
+	padding: 0.5em;
+	margin-bottom: 1em;
+	box-sizing: border-box;
+	width: 100%;
+	resize: none;
+}
+
 .action-form {
 	margin: 5px;
+}
+
+.pdf-cell {
+	position: relative;
+}
+
+.pdf-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.pdf-button {
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	background-color: #141414;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.pdf-button:hover {
+	background-color: #363434;
+}
+
+.edit-cell {
+	position: relative;
+}
+
+.edit-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.edit-button {
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.edit-button:hover {
+	background-color: #0056b3;
 }
 
 .delete-cell {
@@ -203,32 +271,4 @@ button:hover {
 
 .delete-button:hover {
 	background-color: #d84315;
-}
-
-.pdf-cell {
-	position: relative;
-}
-
-.pdf-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-
-.pdf-button {
-	display: inline-block;
-	padding: 5px 20px;
-	font-size: 14px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #fff;
-	background-color: #141414;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.pdf-button:hover {
-	background-color: #363434;
 }
