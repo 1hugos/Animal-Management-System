@@ -1,0 +1,234 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 1em 0;
+}
+
+nav {
+	margin-top: 1em;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+li {
+	margin: 0 1em;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+section {
+	background-color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 300px;
+}
+
+h2 {
+	text-align: center;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+input {
+	width: 100%;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #333;
+	color: #fff;
+	padding: 0.5em;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	background-color: #555;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #c2c2c2;
+}
+
+.error-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 0 15px;
+	max-width: 300px;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #f8d7da;
+	color: #721c24;
+	z-index: 999;
+}
+
+.success-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 0 15px;
+	max-width: 300px;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #d4edda;
+	color: #155724;
+	z-index: 999;
+}
+
+.animals-container {
+	width: 800px;
+}
+
+.header-container {
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-list {
+	grid-column: 2;
+}
+
+.button-container {
+	grid-column: 3;
+}
+
+.add-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	background-color: #4caf50;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.add-button:hover {
+	background-color: #45a049;
+}
+
+.animal-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.animal-table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	min-width: 100px;
+}
+
+.animal-table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+.action-cell {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.action-form {
+	margin: 5px;
+}
+
+.delete-cell {
+	position: relative;
+}
+
+.delete-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.delete-button {
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	background-color: #ff6347;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.delete-button:hover {
+	background-color: #d84315;
+}
+
+.pdf-cell {
+	position: relative;
+}
+
+.pdf-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.pdf-button {
+	display: inline-block;
+	padding: 5px 20px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	background-color: #141414;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.pdf-button:hover {
+	background-color: #363434;
+}

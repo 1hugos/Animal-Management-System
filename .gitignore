@@ -1,0 +1,46 @@
+# Ignoruj pliki wygenerowane przez PHPStorm
+.idea/
+
+# Ignoruj katalogi i pliki generowane przez Composer
+/vendor/
+composer.lock
+
+# Ignoruj pliki konfiguracyjne Apache
+.htaccess
+
+# Ignoruj pliki konfiguracyjne dla systemu operacyjnego
+.DS_Store
+Thumbs.db
+
+# Ignoruj pliki dziennika błędów PHP
+error_log
+log/
+logs/
+*.log
+
+# Ignoruj pliki konfiguracyjne dla narzędzia do zarządzania zależnościami npm
+/node_modules/
+
+# Ignoruj pliki środowiska (np. .env)
+.env
+.env.local
+.env.*.local
+
+# Ignoruj pliki cache
+/cache/
+/var/cache/
+/var/log/
+
+# Ignoruj pliki sesji
+/var/sessions/
+
+# Ignoruj pliki konfiguracyjne dla PHPStorm
+.phpstorm.meta.php
+.phpstorm.meta.php.tmp
+
+# Ignoruj pliki backupowe
+*.bak
+*.swp
+
+# Ignoruj pliki .DS_Store na macOS
+.DS_Store
